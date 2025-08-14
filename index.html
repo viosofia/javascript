@@ -3,11 +3,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/estilo.css" />
     <script src="./js/main.js" defer></script>
-    <title>simulador de Turnos Médicos</title>
-
+    <title>Simulador de Turnos Médicos</title>
 </head>
 <body>
-    <h1>Viola</h1>
+    <h1>Turnos Médicos</h1>
+
+    <section id="fecha-turno">
+        <h2>Selecciona una fecha</h2>
+        <input type="date" id="fecha" />
+    </section>
+
+    <section id="especialidades">
+        <h2>Especialidades disponibles</h2>
+        <div id="lista-especialidades"></div>
+    </section>
+
+    <section id="turnos">
+        <h2>Turnos disponibles</h2>
+        <div id="lista-turnos"></div>
+    </section>
+
+    <h2><a href="./pages/agenda.html">Ver Agenda de Turnos Reservados</a></h2>
 </body>
 </html>
+

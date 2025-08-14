@@ -1,0 +1,95 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Títulos */
+h1, h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* Enlaces */
+a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Secciones */
+section {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Contenedor de botones de especialidades */
+#lista-especialidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Botones */
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Contenedor de turnos y agenda */
+#lista-turnos div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 6px 10px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+}
+
+/* Botón eliminar */
+#lista-turnos button {
+    background-color: #e74c3c;
+}
+
+#lista-turnos button:hover {
+    background-color: #c0392b;
+}
+
+/* Input fecha */
+input[type="date"] {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Mensajes */
+p {
+    margin-bottom: 10px;
+}
+
