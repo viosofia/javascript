@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/estilo.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/main.js" defer></script>
     <title>Simulador de Turnos Médicos</title>
 </head>
 <body>
     <h1>Turnos Médicos</h1>
+
+    <section id="form-paciente"></section>
 
     <section id="fecha-turno">
         <h2>Selecciona una fecha</h2>
@@ -21,11 +24,12 @@
     </section>
 
     <section id="turnos">
-        <h2>Turnos disponibles</h2>
+        <h2 id="titulo-turnos"></h2>
         <div id="lista-turnos"></div>
     </section>
 
     <h2><a href="./pages/agenda.html">Ver Agenda de Turnos Reservados</a></h2>
 </body>
 </html>
+
 

@@ -13,6 +13,7 @@ function mostrarAgenda() {
         return;
     }
 
+    // Ordenar por fecha y hora
     const turnosOrdenados = turnosGuardados.sort((a, b) => {
         const fechaA = new Date(`${a.fecha}T${a.hora}`);
         const fechaB = new Date(`${b.fecha}T${b.hora}`);
@@ -21,9 +22,15 @@ function mostrarAgenda() {
 
     turnosOrdenados.forEach(turno => {
         const div = document.createElement("div");
+
         const fecha = new Date(turno.fecha);
         const fechaFormateada = `${fecha.getDate().toString().padStart(2,'0')}/${(fecha.getMonth()+1).toString().padStart(2,'0')}/${fecha.getFullYear()}`;
-        div.textContent = `${fechaFormateada} - ${turno.hora} - ${turno.especialidad}`;
+
+        // Mostrar especialidad, fecha, hora y datos del paciente
+        div.innerHTML = `
+            <strong>${turno.especialidad}</strong> - ${fechaFormateada} - ${turno.hora}<br>
+            Paciente: ${turno.paciente.nombre} | DNI: ${turno.paciente.dni} | Tel: ${turno.paciente.telefono}
+        `;
 
         const btnEliminar = document.createElement("button");
         btnEliminar.textContent = "Eliminar";
@@ -34,16 +41,14 @@ function mostrarAgenda() {
     });
 }
 
-
 function eliminarTurno(turno) {
     let turnosGuardados = JSON.parse(localStorage.getItem("turnosReservados")) || [];
-    turnosGuardados = turnosGuardados.filter(t => !(t.especialidad === turno.especialidad && t.fecha === turno.fecha && t.hora === turno.hora));
+    turnosGuardados = turnosGuardados.filter(t => 
+        !(t.especialidad === turno.especialidad && t.fecha === turno.fecha && t.hora === turno.hora)
+    );
     localStorage.setItem("turnosReservados", JSON.stringify(turnosGuardados));
     mostrarAgenda();
 }
 
-
 // Inicializar agenda
 mostrarAgenda();
-
-
